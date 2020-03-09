@@ -1,1 +1,164 @@
-/* master css */
+/* CSS CV OPENCLASSROOM 
+######### rev0.1 #########
+######### 08/04  #########
+*/
+
+
+media all and(max-device-width:480px) {
+#global {
+flex-direction: column;
+	}
+aside { flex: 100% }
+section { flex: 100% }	
+}
+
+@font-face { 
+    font-family: 'Fredoka One';
+    src: url('fonts/FredokaOne-Regular.ttf') format('truetype'), 
+         url('fonts/FredokaOne-Regular.woff') format('woff'),
+         url('fonts/FredokaOne-Regular.woff2') format('woff2'),
+         url('fonts/FredokaOne-Regular.otf') format('otf');
+}
+
+#global {
+margin: 0 auto;
+width: 800px; /* screen */
+border: black 1px solid;
+display: flex;
+flex-direction: row;
+/* flex-wrap: wrap; met ASIDE à 100 %... */
+}
+
+
+
+/*  BARRE ASIDE YELLOW */
+aside, aside h2, aside p, li {
+flex: 30%;
+flex-direction: column;
+align-items: center; /* FONCTIONNE PAS !!! alignement vertical */
+justify-content: center;  /* FONCTIONNE PAS !!! alignement vertical */
+background-color: rgba(209,196,233 ,1); 
+font-family: "Fredoka One", cursive;
+font-style: normal;
+font-weight: normal;
+}
+
+aside h2 {
+font-size: 1em;
+color: rgba(209,196,233 ,1);
+background-color: rgba(103,58,183 ,1);
+text-align: center;
+}
+
+aside p {
+font-size: 0.8em;
+color: rgba(103,58,183 ,1);
+text-align: justify;
+padding-left: 0.7em;
+padding-right: 0.7em;
+}
+
+li {
+font-size: 0.8em;
+color: rgba(103,58,183 ,1);
+text-align: justify;
+padding-left: 0.7em;
+padding-right: 0.7em;
+list-style-type: none;
+}
+
+
+/*  A REVOIR !!! */
+#avatar {
+  background-size : contain;
+  background: url(images/avatar.svg) no-repeat center; 
+  width : 150px; 
+  height : 150px;
+  
+  border: none;
+  -moz-border-radius :  50%;
+  -webkit-border-radius :  50%;
+  border-radius :  50%;
+  margin: 15%; /* pas propre... */
+}
+
+
+#contact {
+font-family: "Fredoka One", cursive;
+font-style: normal;
+font-size: 1em;
+font-weight: normal;
+color: rgba(0,0,0,1);
+}
+
+
+#icoLoisir {
+display: flex; /* les DIV > IMG n'héritent pas du parent ASIDE !!! */
+flex-direction: rows;
+flex-wrap: wrap;
+justify-content: space-around;
+align-content: space-between;
+
+object-position: center; /* FONCTIONNE PAS !!! align-vertical  */
+object-fit: cover; /* FONCTIONNE PAS !!! align-vertical  */
+/* padding-bottom: 0.7em; fonctionne... */
+}
+
+
+/* CONTENEUR MAIN  */
+#contener {
+flex: 70%;
+flex-direction: column;
+margin-left: 2.5em;
+margin-right: 2.5em;
+background-color:rgba(255,255,255,1); 
+}
+
+section {
+display: flex;
+flex: 100%;
+}
+
+/* TITRES CV */
+h1, h2, h3 {
+font-family: "Fredoka One", cursive;
+font-style: normal;
+font-weight: normal;
+color: rgba(0,0,0,1);
+text-align: left;
+padding-left: 30px;
+}
+
+/* ENTETE CV */
+h1 {
+font-size: 2.5em;
+}
+/* TITRE SECTION */
+h2 {
+font-size: 1em;
+}
+/* SOUS TITRE CV */
+h3 {
+font-size: 1em;
+margin-top: -2.7em;
+}
+
+#colorTitre {
+color: rgba(209,196,233 ,1);
+}
+
+section {
+display: flex;
+flex-direction: column;
+}
+
+#formation, #experience, #recommandation {
+display: flex; /* sinon retour à la ligne après IMG !! */
+flex-direction: row;
+flex-wrap: no-wrap; /* valeur defaut */
+align-content: flex-start;
+align-items: center;
+justify-content: flex-start;
+border-bottom: 1px solid rgba(103,58,183 ,1);
+width: 100%;
+}
