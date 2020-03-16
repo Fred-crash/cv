@@ -2,17 +2,16 @@
 <html lang="fr">
 
 <head>
-<!-- test creation sur nouvelle branche developpement -->
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width" />
 <link href="#" rel="stylesheet" media="screen">
 <title>CV de Fred-Crash</title>
-
+<!-- BRANCHE DEVELOPPEMENT -->
 <style type="text/css">
 
 @media all and(max-device-width:480px) {
 #global {
-flex-direction: column;
+	flex-direction: column;
 	}
 aside { flex: 100% }
 section { flex: 100% }	
@@ -27,176 +26,233 @@ section { flex: 100% }
 }
 
 #global {
-margin: 0 auto;
-width: 800px; /* screen */
-border: black 1px solid;
-display: flex;
-flex-direction: row;
+	display: flex;
+	flex-direction: row;
+	margin: 0 auto;
+	width: 670px; /* screen */
+	border: black 1px solid;
 /* flex-wrap: wrap; met ASIDE à 100 %... */
 }
 
+aside {
+/* proprité générale ici ! flex 30% !! */
+}
 
-
-/*  BARRE ASIDE YELLOW */
-aside, aside h2, aside p, li {
-flex: 30%;
-flex-direction: column;
-align-items: center; /* FONCTIONNE PAS !!! alignement vertical */
-justify-content: center;  /* FONCTIONNE PAS !!! alignement vertical */
-background-color: rgba(209,196,233 ,1); 
-font-family: "Fredoka One", cursive;
-font-style: normal;
-font-weight: normal;
+/*  BARRE ASIDE MAUVE */
+aside, aside h2, aside p, aside li {
+/* si ajout de diplay flex: réduit la largeur de bande arrière plan pour contact et loisir ! pas à propros de moi ?*/
+	flex: 30%;
+	flex-direction: column;
+	align-items: center; /* FONCTIONNE PAS !!! alignement vertical */
+	justify-content: center;  /* FONCTIONNE PAS !!! alignement vertical */
+	background-color: rgba(209,196,233 ,1); 
+	font-family: "Fredoka One", cursive;
+	font-style: normal;
+	font-weight: normal;
+	text-align: center; /* ne sert à rien ... */
 }
 
 aside h2 {
-font-size: 1em;
-color: rgba(209,196,233 ,1);
-background-color: rgba(103,58,183 ,1);
-text-align: center;
+	font-size: 1em;
+	color: rgba(209,196,233 ,1);
+	background-color: rgba(103,58,183 ,1);
+	text-align: center;
 }
 
 aside p {
-font-size: 0.8em;
-color: rgba(103,58,183 ,1);
-text-align: justify;
-padding-left: 0.7em;
-padding-right: 0.7em;
+	font-size: 0.8em;
+	color: rgba(103,58,183 ,1);
+	text-align: justify;
+	padding-left: 0.7em; /* ne decale pas les titres... */
+	padding-right: 0.7em;
 }
 
-li {
-font-size: 0.8em;
-color: rgba(103,58,183 ,1);
-text-align: justify;
-padding-left: 0.7em;
-padding-right: 0.7em;
-list-style-type: none;
+/* LISTE SANS PUCE */
+aside li {
+	font-size: 0.8em;
+	color: rgba(103,58,183 ,1);
+	text-align: justify;
+	padding-left: 0.7em;
+	padding-right: 0.7em;
+	list-style-type: none;
 }
 
+aside li:nth-child(2n) {
+	padding-bottom: 2em;
+}
+
+aside li:last-child {
+	padding-bottom: 0;
+}
 
 /*  A REVOIR !!! */
 #avatar {
   background-size : contain;
   background: url(images/avatar.svg) no-repeat center; 
+  object-position: 50% 50%; /* là non plus ne fonctionne pas... */
+  object-fit: contain; /* idem */
   width : 150px; 
   height : 150px;
-  
+  padding: 0;
   border: none;
   -moz-border-radius :  50%;
   -webkit-border-radius :  50%;
   border-radius :  50%;
-  margin: 15%; /* pas propre... */
+  margin: 15%; /* pas propre... mais pas d autre solution en cours... */
+
+/* l'avatar ne cause ne rien le décalage des titres de la colonne !*/   
 }
 
 
 #contact {
-font-family: "Fredoka One", cursive;
-font-style: normal;
-font-size: 1em;
-font-weight: normal;
-color: rgba(0,0,0,1);
+	font-family: "Fredoka One", cursive;
+	font-style: normal;
+	font-size: 1em;
+	font-weight: normal;
+	color: rgba(0,0,0,1);
 }
 
+#propos {
+flex-grow 1; /* revoir l axe !!!*/
+}
 
 #icoLoisir {
-display: flex; /* les DIV > IMG n'héritent pas du parent ASIDE !!! */
-flex-direction: rows;
-flex-wrap: wrap;
-justify-content: space-around;
-align-content: space-between;
+	display: flex; /* les DIV > IMG n'héritent pas du parent ASIDE !!! */
+	flex-direction: row;
+	flex-wrap: wrap;
+	justify-content: space-around;
+	align-content: space-between;
 
-object-position: center; /* FONCTIONNE PAS !!! align-vertical  */
-object-fit: cover; /* FONCTIONNE PAS !!! align-vertical  */
+	object-position: center; /* FONCTIONNE PAS !!! align-vertical  aucun support pour ie... */
+	object-fit: cover; /* FONCTIONNE PAS !!! align-vertical  */
 /* padding-bottom: 0.7em; fonctionne... */
+}
+
+/* ICONE COLONNE GAUCHE CELLULE 04 */
+.iconeCell04 {
+	width: 50px;
+	height: 50px;
 }
 
 
 /* CONTENEUR MAIN  */
 #contener {
-flex: 70%;
-flex-direction: column;
-margin-left: 2.5em;
-margin-right: 2.5em;
-background-color:rgba(255,255,255,1); 
+	display: flex; /* en mettant la propriété: une marge importante entre le contener et le titre ! redondance avec section !!  */
+	flex: 70%;
+	flex-direction: column;
+	margin-left: 2.5em;
+	margin-right: 2.5em;
+	background-color:rgba(255,255,255,1); 
 }
 
 section {
-display: flex;
-flex: 100%;
+	/* display: flex; */
+	/* Si pas de proprité flex sur section: marge moins importante entre contener et titre !!  */
+	flex: 100%;
+	flex-direction: column;
 }
 
 /* TITRES CV */
 h1, h2, h3 {
-font-family: "Fredoka One", cursive;
-font-style: normal;
-font-weight: normal;
-color: rgba(0,0,0,1);
-text-align: left;
-padding-left: 30px;
+	font-family: "Fredoka One", cursive;
+	font-style: normal;
+	font-weight: normal;
+	color: rgba(0,0,0,1);
+	text-align: left;
+	padding-left: 30px;
 }
 
 /* ENTETE CV */
 h1 {
-font-size: 2.5em;
+	font-size: 2.5em;
 }
 /* TITRE SECTION */
 h2 {
-font-size: 1em;
+	font-size: 1em;
 }
 /* SOUS TITRE CV */
 h3 {
-font-size: 1em;
-margin-top: -2.7em;
+	font-size: 1em;
+	margin-top: -2.7em;
+}
+
+h3 > span {
+	text-decoration: underline solid rgba(103,58,183 ,1);
+	text-underline-position: under; /* Pas de support sous firefox ni safari ! */
+/* le selecteur "+" ne fonctionne pas.
+de plus, impossible de réduire le sous lignage ou de le baisser ! */
+}
+
+h4 {
+	font-family: "Fredoka One", cursive;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 1em;
+	color: rgba(0,0,0,1);
+	text-align: left;
+	/* padding-left: 30px; */
+	/* ATTENTION UTILISER H4 CREE UNE MARGE TOP PLUS IMPORTANTE QUE LE TEXTE P !!! 
+	PREFERER TITRE TEXTE !!! */
 }
 
 #colorTitre {
-color: rgba(209,196,233 ,1);
+	color: rgba(209,196,233 ,1);
 }
 
-section {
-display: flex;
-flex-direction: column;
+
+
+.enteteSection {
+	display: flex; /* sinon retour à la ligne après IMG !! */
+	flex-direction: row;
+	flex-wrap: nowrap; /* valeur defaut */
+	align-content: flex-start;
+	align-items: center; /* A REVOIR !! */
+	justify-content: flex-start;
+	border-bottom: 1px solid rgba(103,58,183 ,1);
+	width: 100%;
 }
 
-#formation, #experience, #recommandation {
-display: flex; /* sinon retour à la ligne après IMG !! */
-flex-direction: row;
-flex-wrap: no-wrap; /* valeur defaut */
-align-content: flex-start;
-align-items: center;
-justify-content: flex-start;
-border-bottom: 1px solid rgba(103,58,183 ,1);
-width: 100%;
+.contenerSection {
+	display: flex; /* sinon retour à la ligne après IMG !! */
+	flex-direction: row;
 }
 
-/* STYLE POUR LE TITRE EN SVG */
-svg{
-display: block;
-margin: 0 auto;
-border: solid 0px #000000;
-background-color: #ffffff;
-margin: 0;
+.puceFirst {
+	flex: 10%;
+	flex-direction: column;
+	/* margin-left: 2.5em;
+	margin-right: 2.5em; */
+	border: 1px solid rgba(103,58,183 ,1);
 }
 
-#titreClair {
-font-family: "Fredoka One", cursive;
-font-size: 2.3em;
-font-weight: bolder;
-fill: rgba(209,196,233 ,1);
+.date {
+	flex: 30%;
+	flex-direction: column;
+	/* margin-left: 2.5em;
+	margin-right: 2.5em; */
+	border: 1px solid rgba(103,58,183 ,1);
 }
 
-#titreFonce {
-font-family: "Fredoka One", cursive;
-font-size: 1em;
-font-weight: bolder;
-fill: rgba(103,58,183 ,1);
+.description {
+	flex: 60%;
+	flex-direction: column;
+	/* margin-left: 2.5em;
+	margin-right: 2.5em; */
+	border: 1px solid rgba(103,58,183 ,1);
 }
 
-#sousTitreNoir {
-font-family: "Fredoka One", cursive;
-font-size: 1em;
-font-weight: bolder;
-fill: #000000;
+main p {
+	font-family: "Fredoka One", cursive;
+	font-style: normal;
+	font-weight: normal;
+	color: rgba(0,0,0,1);
+	text-align: left;
+}
+
+
+p.texte {
+font-size: 0.8em;
+text-align: justify;
 }
 
 </style>
@@ -210,92 +266,119 @@ fill: #000000;
 
 <aside>
 <!-- cell 01 -->
-<div id="avatar">
-</div>
+	<section>
+		<div id="avatar">
+		</div>
+	</section>
 
 <!-- cell 02 -->
-<div id="contact">
-<h2>CONTACT</h2>
-<ul><li>Lieu de résidence</li>
-<li>Angoulême, Charente</li></ul>
+	<section>
+		<div id="contact">
+			<h2>CONTACT</h2>
+				<ul>
+					<li>Adresse</li>
+					<li>Paris</li>
 
-<ul><li>Site web</li>
-<li>www.monsite.com</li></ul>
+					<li>Téléphone</li>
+					<li>00 00 00 00 00</li>
 
-<ul><li>E-mail</li>
-<li>f.d@monmail.fr</li></ul>
+					<li>Site web</li>
+					<li>www.name.com</li>
 
-<ul><li>Dispora</li>
-<li>https://framasphere.org/</li></ul>
-</div>
+					<li>Skype</li>	
+					<li>@name_id</li>
+				</ul>
+		</div>
+	</section>
 
 <!-- cell 03 -->
-<div>
-<h2>A PROPOS DE MOI</h2>
-<p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, 
-tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo.</p>
-</div>
-
+	<section>
+		<div id="2propos">
+			<h2>A PROPOS DE MOI</h2>
+			<p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, 
+			tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo.</p>
+		</div>
+	</section>
 <!-- cell 04 -->
-<div id="loisir">
-<h2>LOISIRS</h2>
-<div id="icoLoisir">
-<img src="images/iglooColor.svg" alt="cultures Inuits" width="50px" height="50px" />
-<img src="images/musicColor.svg" alt="Musique" width="50px" height="50px" />
-<img src="images/raspColor.svg" alt="Raspberry" width="50px" height="50px" />
-</div>
-</div>
+	<section>
+		<div id="loisir">
+			<h2>LOISIRS</h2>
+				<div id="icoLoisir">
+					<img class="iconeCell04" src="images/iglooColor.svg" alt="cultures Inuits" />
+					<img class="iconeCell04" src="images/musicColor.svg" alt="Musique" />
+					<img class="iconeCell04" src="images/raspColor.svg" alt="Raspberry" />
+				</div>
+		</div>
+	</section>
 </aside>
 
 
 <main id="contener">
 
-<section>
-<div>
-<header>
-<svg width="100%" height="120px" viewBox="0 0 520 120">
-<text x="0" y="60" id="titreClair">Frédéric<tspan id="titreFonce" dx="20" >DUMAS</tspan></text>
-<text dx="0" dy="80" id="sousTitreNoir">web développeur freelance</text>
-<line x1="0" y1="82" x2="95" y2="82" style="stroke-width: 1; stroke: rgba(103,58,183 ,1);" />
-</svg>
-</header>
-</div>
-</section>
+	<section>
+		<div>
+			<header>
+				<h1><span id="colorTitre">FREDERIC</span> DUMAS</h1>
+				<h3><span>Dévelo</span>ppeur web freelance</h3>
+			</header>
+		</div>
+	</section>
 
-<section>
-<div id="formation">
-<img src="images/formation.svg" alt="formation" width="25px" height="25px" />
-<h2>FORMATION</h2></div>
-<div>
-<p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, 
-tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo.</p>
-</div>
-</section>
+	<section><!-- SECTION FORMATION -->
+		<div class="enteteSection">
+			<div><img src="images/formation.svg" alt="formation" width="25px" height="25px" /></div>
+			<div><h2>FORMATION</h2></div>
+		</div>
+		
+		<div class="contenerSection">
+			<div class="puceFirst"><p class="texte">image</p></div>
+			<div class="date">
+				<p class="texte">2020 - </p>
+				<p class="texte">Paris</p>
+			</div>
+			<div class="description">
+				<h4>OPENCLASSROOMS</h4>
+				<p class="texte">Junior Web Developer</p>
+				<p class="texte">The standard chunk of Lorem Ipsum used since the 1500s is reproduced below for those interested. Sections 1.10.32 and 1.10.33 from "de Finibus 
+				Bonorum et Malorum" by Cicero.</p>
+			</div>
+		</div>
+	</section>
 
-<section>
-<div id="experience">
-<img src="images/exp_pro.svg" alt="experience professionelle" width="25px" height="25px" />
-<h2>EXPERIENCE PROFESSIONELLE</h2></div>
-<div>
-<p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, 
-tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo.</p>
-</div>
-</section>
+	<section><!-- EXPERIENCE PROFESSIONELLE -->
+		<div class="enteteSection">
+			<img src="images/exp_pro.svg" alt="experience professionelle" width="25px" height="25px" />
+			<h2>EXPERIENCE PROFESSIONELLE</h2>
+		</div>
+		
+		<div class="contenerSection">
+			<div><p class="texte">image</p></div>
+			<div><p class="texte">date</p></div>
+			<div>
+				<p class="texte">Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, 
+					tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo.</p>
+			</div>
+		</div>
+	</section>
 
-<section>
-<div id="recommandation">
-<img src="images/recommandation.svg" alt="recommandation" width="25px" height="25px" />
-<h2>RECOMMANDATION</h2>
-</div>
-<div>
-<p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, 
-tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo.</p>
-</div>
-</section>
+	<section><!-- RECOMMANDATION -->
+		<div class="enteteSection">
+			<img src="images/recommandation.svg" alt="recommandation" width="25px" height="25px" />
+			<h2>RECOMMANDATION</h2>
+		</div>
+			
+		<div class="contenerSection">
+			<div><p class="texte">image</p></div>
+			<div><p class="texte">date</p></div>
+			<div>
+				<p class="texte">Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, 
+					tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo.</p>
+			</div>
+		</div>
+	</section>
 
 </main>
-
 </div><!-- DIV GLOBAL  -->
-</body>
 
+</body>
 </html>
