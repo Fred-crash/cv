@@ -51,11 +51,11 @@ content: "";
 }
 
 aside {
-	border: 1px solid black;
-	display: flex;
-	flex-direction: column;
-	flex: 35%;
-	background-color: rgba(209,196,233 ,1); 
+border: 1px solid black;
+display: flex;
+flex-direction: column;
+flex: 35%;
+background-color: rgba(209,196,233 ,1); 
 
 
 
@@ -114,6 +114,8 @@ display: flex;
 flex-direction: row; /* valeur par defaut... */
 justify-content: center;
 /*  align-items: center; FONCTIONNE PAS !!  */
+
+   
 }
 
 #avatar {
@@ -231,6 +233,10 @@ h4 {
 	/* ATTENTION UTILISER H4 CREE UNE MARGE TOP PLUS IMPORTANTE QUE LE TEXTE P !!! 
 	PREFERER TITRE TEXTE !!! */
 }
+
+
+
+
 
 .enteteSection {
 	display: flex; /* sinon retour à la ligne après IMG !! */
