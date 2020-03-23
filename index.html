@@ -1,39 +1,33 @@
 <!DOCTYPE html>
 <html lang="fr">
 
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width" />
-<script src="https://kit.fontawesome.com/4da757471e.js" crossorigin="anonymous"></script>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width" />
+		<script src="https://kit.fontawesome.com/4da757471e.js" crossorigin="anonymous"></script>
 
 
-<link href="#" rel="stylesheet" media="screen">
-<title>CV de Fred-Crash</title>
+		<link href="#" rel="stylesheet" media="screen">
+		<title>CV de Fred-Crash</title>
 <!-- BRANCHE DEVELOPPEMENT -->
-<style type="text/css">
+<style type="text/css">	
 
 @media all and(max-device-width:480px) {
 #global {
 	flex-direction: column;
 	}
-aside { flex: 100% }
-section { flex: 100% }	
+aside { flex: 100%; }
+section { flex: 100%; }	
 }
 
-@font-face { 
-    font-family: 'Fredoka One';
-    src: url('fonts/FredokaOne-Regular.ttf') format('truetype'), 
-         url('fonts/FredokaOne-Regular.woff') format('woff'),
-         url('fonts/FredokaOne-Regular.woff2') format('woff2'),
-         url('fonts/FredokaOne-Regular.otf') format('otf');
-}
+
 
 /* FONT AWESOME */
 .fa-circle, .fa-dot-circle,  .fa-briefcase, .fa-pencil-alt, .fa-graduation-cap {
 color: rgba(103,58,183 ,1); 
 /* fill: rgba(103,58,183 ,1); proprité SVG NON SUPPORTEES !! mdr... 
  stroke: rgba(103,58,183 ,1); 
- stroke-width: 2px; */
+ stroke-width: 2px; */ 
 }
 
 
@@ -48,28 +42,38 @@ color: rgba(103,58,183 ,1);
 }
 
 aside {
+border: 1px solid black;
+display: flex;
+flex-direction: column;
+flex: 35%;
+background-color: rgba(209,196,233 ,1); 
+padding-left: 2em; /*  am ettre sur les enfants */
+padding-right: 2em;
+
+
 /* proprité générale ici ! flex 30% !! */
 }
 
 /*  BARRE ASIDE MAUVE */
-aside, aside h2, aside p, aside li {
-/* si ajout de diplay flex: réduit la largeur de bande arrière plan pour contact et loisir ! pas à propros de moi ?*/
-	flex: 30%;
-	flex-direction: column;
+aside h2, aside p, aside li {
+
 	align-items: center; /* FONCTIONNE PAS !!! alignement vertical */
-	justify-content: center;  /* FONCTIONNE PAS !!! alignement vertical */
+
 	background-color: rgba(209,196,233 ,1); 
-	font-family: "Fredoka One", cursive;
+	font-family: "Font Awesome 5 Free";
 	font-style: normal;
 	font-weight: normal;
-	text-align: center; /* ne sert à rien ... */
+
 }
 
 aside h2 {
-	font-size: 1em;
+	font-size: 0.9em;
+	font-weight: bold;
 	color: rgba(209,196,233 ,1);
 	background-color: rgba(103,58,183 ,1);
 	text-align: center;
+	padding-top: 0.3em;
+	padding-bottom: 0.3em;	
 }
 
 aside p {
@@ -84,14 +88,12 @@ aside p {
 aside li {
 	font-size: 0.8em;
 	color: rgba(103,58,183 ,1);
-	text-align: justify;
-	padding-left: 0.7em;
-	padding-right: 0.7em;
+	text-align: left;
 	list-style-type: none;
 }
 
 aside li:nth-child(2n) {
-	padding-bottom: 2em;
+	padding-bottom: 1em;
 }
 
 aside li:last-child {
@@ -118,7 +120,7 @@ aside li:last-child {
 
 
 #contact {
-	font-family: "Fredoka One", cursive;
+	font-family: "Font Awesome 5 Free";
 	font-style: normal;
 	font-size: 1em;
 	font-weight: normal;
@@ -167,37 +169,45 @@ section {
 
 /* TITRES CV */
 h1, h2, h3 {
-	font-family: "Fredoka One", cursive;
+	font-family: "Font Awesome 5 Free";
+	font-size: 0.9em;
 	font-style: normal;
 	font-weight: normal;
 	color: rgba(0,0,0,1);
 	text-align: left;
-	padding-left: 30px;
+	
 }
 
 /* ENTETE CV */
 h1 {
 	font-size: 2.5em;
+	font-weight: lighter;
 }
 /* TITRE SECTION */
 h2 {
 	font-size: 1em;
+	font-weight: bold;
+}	
+	
+h2.titreMain {
+padding-left: 1em;
+
 }
 /* SOUS TITRE CV */
 h3 {
 	font-size: 1em;
-	margin-top: -2.7em;
+	font-weight: bold;
+	margin-top: -2em;
 }
 
 h3 > span {
-	text-decoration: underline solid rgba(103,58,183 ,1);
+	
+	text-decoration: underline solid rgba(209,196,233 ,1);
 	text-underline-position: under; /* Pas de support sous firefox ni safari ! */
-/* le selecteur "+" ne fonctionne pas.
-de plus, impossible de réduire le sous lignage ou de le baisser ! */
 }
 
 h4 {
-	font-family: "Fredoka One", cursive;
+	font-family: "Font Awesome 5 Free";
 	font-style: normal;
 	font-weight: normal;
 	font-size: 1em;
@@ -208,8 +218,9 @@ h4 {
 	PREFERER TITRE TEXTE !!! */
 }
 
-#colorTitre {
+#prenom {
 	color: rgba(209,196,233 ,1);
+	font-weight: normal;
 }
 
 
@@ -255,7 +266,7 @@ h4 {
 }
 
 main p {
-	font-family: "Fredoka One", cursive;
+	font-family: "Font Awesome 5 Free";
 	font-style: normal;
 	font-weight: normal;
 	color: rgba(0,0,0,1);
@@ -275,130 +286,134 @@ text-align: justify;
 <body>
 
 <!-- DIV largeur cv max ecran -->
-<div id="global">
+	<div id="global">
 
-<aside>
+		<aside>
 <!-- cell 01 -->
-	<section>
-		<div id="avatar">
-		</div>
-	</section>
+			<section>
+				<div id="avatar">
+				</div>
+			</section>
 
 <!-- cell 02 -->
-	<section>
-		<div id="contact">
-			<h2>CONTACT</h2>
-				<ul>
-					<li>Adresse</li>
-					<li>Paris</li>
+			<section>
+				<div id="contact">
+					<h2>CONTACT</h2>
+					<ul>
+						<li>Adresse</li>
+						<li>Paris</li>
 
-					<li>Téléphone</li>
-					<li>00 00 00 00 00</li>
+						<li>Téléphone</li>
+						<li>00 00 00 00 00</li>
 
-					<li>Site web</li>
-					<li>www.name.com</li>
+						<li>Site web</li>	
+						<li>www.name.com</li>
 
-					<li>Skype</li>	
-					<li>@name_id</li>
-				</ul>
-		</div>
-	</section>
+						<li>Skype</li>	
+						<li>@name_id</li>
+					</ul>
+				</div>
+			</section>
 
 <!-- cell 03 -->
-	<section>
-		<div id="2propos">
-			<h2>A PROPOS DE MOI</h2>
-			<p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, 
-			tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo.</p>
-		</div>
-	</section>
-<!-- cell 04 -->
-	<section>
-		<div id="loisir">
-			<h2>LOISIRS</h2>
-				<div id="icoLoisir">
-					<img class="iconeCell04" src="images/iglooColor.svg" alt="cultures Inuits" />
-					<img class="iconeCell04" src="images/musicColor.svg" alt="Musique" />
-					<img class="iconeCell04" src="images/raspColor.svg" alt="Raspberry" />
+			<section>
+				<div id="2propos">
+					<h2>A PROPOS DE MOI</h2>
+					<p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, 
+					tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo.</p>
 				</div>
-		</div>
-	</section>
-</aside>
+			</section>
+<!-- cell 04 -->
+			<section>
+				<div id="loisir">
+					<h2>LOISIRS</h2>
+						<div id="icoLoisir">
+							<img class="iconeCell04" src="images/iglooColor.svg" alt="cultures Inuits" />
+							<img class="iconeCell04" src="images/musicColor.svg" alt="Musique" />
+							<img class="iconeCell04" src="images/raspColor.svg" alt="Raspberry" />
+						</div>
+				</div>
+			</section>
+		</aside>
 
 
-<main id="contener">
+		<main id="contener">
 
-	<section>
-		<div>
-			<header>
-				<h1><span id="colorTitre">FREDERIC</span> DUMAS</h1>
-				<h3><span>Dévelo</span>ppeur web freelance</h3>
-			</header>
-		</div>
-	</section>
-<i class="fas fa-circle"></i> <!-- disque f111 -->
-<i class="far fa-circle"></i></i><!-- cercle f111 -->
-<i class="far fa-dot-circle"></i><!-- cercle f192 -->
-<i class="fas fa-briefcase"></i> <!-- sac  f192 -->
-<i class="fas fa-pencil-alt"></i><!-- pencil f303 -->
-<i class="fas fa-graduation-cap"></i> <!-- graduation-cap f19d -->
+			<section>
 
+					<header>
+						<h1><span id="prenom">FREDERIC</span> DUMAS</h1>
+						<h3><span>Dévelo</span>ppeur web freelance</h3>
+					</header>
 
-	<section><!-- SECTION FORMATION -->
-		<div class="enteteSection">
-			<div><img src="images/formation.svg" alt="formation" width="25px" height="25px" /></div>
-			<div><h2>FORMATION</h2></div>
-		</div>
+			</section>
+
+			<section><!-- SECTION FORMATION -->
+				<div class="enteteSection">
+					<i class="fas fa-graduation-cap"></i>
+					<h2 class="titreMain">FORMATION</h2>
+				</div>
 		
-		<div class="contenerSection">
-			<div class="puceFirst"><p class="texte">image</p></div>
-			<div class="date">
-				<p class="texte">2020 - </p>
-				<p class="texte">Paris</p>
-			</div>
-			<div class="description">
-				<h4>OPENCLASSROOMS</h4>
-				<p class="texte">Junior Web Developer</p>
-				<p class="texte">The standard chunk of Lorem Ipsum used since the 1500s is reproduced below for those interested. Sections 1.10.32 and 1.10.33 from "de Finibus 
-				Bonorum et Malorum" by Cicero.</p>
-			</div>
-		</div>
-	</section>
+				<div class="contenerSection">
+					<div class="puceFirst"><i class="far fa-dot-circle"></i></div>
+					<div class="date">
+						<p class="texte">2020 - 2021</p>
+						<p class="texte">Paris</p>
+					</div>
+					<div class="description">
+						<h4>OPENCLASSROOMS</h4>
+						<p class="texte">Junior Web Developer</p>
+						<p class="texte">The standard chunk of Lorem Ipsum used since the 1500s is reproduced below for those interested. Sections 1.10.32 and 1.10.33 from "de Finibus 
+						Bonorum et Malorum" by Cicero.</p>
+					</div>
+					
+					<div class="puceFirst"><i class="fas fa-circle"></i></div>
+					<div class="date">
+						<p class="texte">2020 - 1999 </p>
+						<p class="texte">Londres</p>
+					</div>
+					<div class="description">
+						<h4>Musique</h4>
+						<p class="texte">sous titre</p>
+						<p class="texte">The standard chunk of Lorem Ipsum used since the 1500s is reproduced below for those interested. Sections 1.10.32 and 1.10.33 from "de Finibus 
+						Bonorum et Malorum" by Cicero.</p>
+					</div>
+				</div>
+			</section>
 
-	<section><!-- EXPERIENCE PROFESSIONELLE -->
-		<div class="enteteSection">
-			<img src="images/exp_pro.svg" alt="experience professionelle" width="25px" height="25px" />
-			<h2>EXPERIENCE PROFESSIONELLE</h2>
-		</div>
+			<section><!-- EXPERIENCE PROFESSIONELLE -->
+				<div class="enteteSection">
+					<i class="fas fa-briefcase"></i>
+					<h2 class="titreMain">EXPERIENCE PROFESSIONELLE</h2>
+				</div>
 		
-		<div class="contenerSection">
-			<div><p class="texte">image</p></div>
-			<div><p class="texte">date</p></div>
-			<div>
-				<p class="texte">Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, 
-					tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo.</p>
-			</div>
-		</div>
-	</section>
+				<div class="contenerSection">
+					<div><i class="far fa-dot-circle"></i></div>
+					<div><p class="texte">2000 - 2020</p></div>
+					<div>
+						<p class="texte">Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, 
+						tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo.</p>
+					</div>
+				</div>
+			</section>
 
-	<section><!-- RECOMMANDATION -->
-		<div class="enteteSection">
-			<img src="images/recommandation.svg" alt="recommandation" width="25px" height="25px" />
-			<h2>RECOMMANDATION</h2>
-		</div>
+			<section><!-- RECOMMANDATION -->
+				<div class="enteteSection">
+					<i class="fas fa-pencil-alt"></i>
+					<h2 class="titreMain">RECOMMANDATION</h2>
+				</div>
 			
-		<div class="contenerSection">
-			<div><p class="texte">image</p></div>
-			<div><p class="texte">date</p></div>
-			<div>
-				<p class="texte">Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, 
-					tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo.</p>
-			</div>
-		</div>
-	</section>
+				<div class="contenerSection">
 
-</main>
-</div><!-- DIV GLOBAL  -->
+					<div>
+						<p class="texte">Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, 
+						tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo.</p>
+					</div>
+				</div>
+			</section>
+
+		</main>
+	</div><!-- DIV GLOBAL  -->
 
 </body>
 </html>
