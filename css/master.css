@@ -40,6 +40,21 @@ section { flex: 100%; }
 	font-size: 1.5em;
 }
 /* UTILIER BEFORE ET AFTER SUPPERPOSITION AVEC PUCE */
+
+/* CARACTERES UNICODES
+
+RAPSBERRY : "\f7bb" prefix: fab 
+IGLOO : "\f7ae"    prefix: fas
+MUSIC : "\f001"    prefix: fas
+CIRLCE: "\f111"    prefix: far 
+
+Syntax:
+
+.maClasse:: before {
+content: "\f7bb";
+}
+
+*/
 .fa-border-icon {
     border-width: 1px;
     border-style: solid;
