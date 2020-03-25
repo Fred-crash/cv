@@ -42,6 +42,7 @@ section { flex: 100%; }
 /* UTILIER BEFORE ET AFTER SUPPERPOSITION AVEC PUCE */
 
 /* CARACTERES UNICODES
+
 RAPSBERRY : "\f7bb" prefix: fab 
 IGLOO : "\f7ae"    prefix: fas
 MUSIC : "\f001"    prefix: fas
@@ -52,6 +53,7 @@ Syntax:
 .maClasse:: before {
 content: "\f7bb";
 }
+
 */
 .fa-border-icon {
     border-width: 1px;
@@ -135,10 +137,16 @@ aside li:last-child {
 /*  A REVOIR !!! */
 #contenerAvatar {
 	display: flex;
-	flex-direction: row; /* valeur par defaut... */
-	justify-content: center;
- 
-	align-items: center;
+	flex-direction: column; /* valeur par defaut... */ row ou loumn ne change rien !!! 
+
+justify-content: center; /* les deux déclarations sont obligatoires  alors que dans les exemples, seul align-items:center; devrait suffire !!!!  */
+align-items: center ; 
+
+/* object-position: center;  */
+align-self: center;
+	
+	/*width: 100%;
+	height: 200px; */
 }
 /* POSITIONNEMENT DE L ENFANT NE SERT PAS !!! */
 .deux {
@@ -148,14 +156,24 @@ aside li:last-child {
 }
 
 #avatar {
-	width: 100px;
-	height: 100px;
-  	border: none;
+width: 75px;
+height: 75px;
+  	/*border: none; */
   /* -moz-border-radius :  50%;
   -webkit-border-radius :  50%;
   border-radius :  50%; */
 }
 
+#avatar2 {
+display: flex;       
+align-items: center ; /* ne sert à rein !!! */
+align-self: center; /* ne sert à rein !!! */
+
+  	/*border: none; */
+  /* -moz-border-radius :  50%;
+  -webkit-border-radius :  50%;
+  border-radius :  50%; */
+}
 
 #contact {
 	font-family: "Font Awesome 5 Free";
