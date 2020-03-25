@@ -18,26 +18,26 @@ section { flex: 100%; }
 /* SECTION ICONES FONT AWESOME */
 
 .fa-circle, .fa-dot-circle,  .fa-briefcase, .fa-pencil-alt, .fa-graduation-cap {
-color: rgba(103,58,183 ,1); 
+	color: rgba(103,58,183 ,1); 
 /* fill: rgba(103,58,183 ,1); proprité SVG NON SUPPORTEES !! mdr... 
  stroke: rgba(103,58,183 ,1); 
  stroke-width: 2px; */ 
 }
 
 .fa-dot-circle {
-font-size: 0.6em; 
-padding-right: 0.7em;
+	font-size: 0.6em; 
+	padding-right: 0.7em;
 }
 
 .fa-circle {
-font-size: 0.4em;
-padding-right: 0.7em;
+	font-size: 0.4em;
+	padding-right: 0.7em;
 }
 
 
 .fa-igloo, .fa-music, .fa-raspberry-pi{
-color: rgba(103,58,183 ,1); 
-font-size: 1.5em;
+	color: rgba(103,58,183 ,1); 
+	font-size: 1.5em;
 }
 /* UTILIER BEFORE ET AFTER SUPPERPOSITION AVEC PUCE */
 .fa-border-icon {
@@ -46,10 +46,10 @@ font-size: 1.5em;
     border-color: rgba(103,58,183 ,1);
    /* border-image: initial; */
    /* border-radius: 50% 50% 50% 50%; */
-  -moz-border-radius :  50%;
-  -webkit-border-radius :  50%;
-  border-radius :  50%;
-  padding: 2% 2% 2% 2%; 
+  	-moz-border-radius :  50%;
+  	-webkit-border-radius :  50%;
+  	border-radius :  50%;
+  	padding: 2% 2% 2% 2%; 
 }
 
 
@@ -64,12 +64,12 @@ font-size: 1.5em;
 }
 
 aside {
-border: 1px solid black;
-display: flex;
-flex-direction: column;
-flex: 35%;
+	border: 1px solid black;
+	display: flex;
+	flex-direction: column;
+	flex: 35%;
 
-background-color: rgba(209,196,233 ,1); 
+	background-color: rgba(209,196,233 ,1); 
 }
 
 /*  BARRE ASIDE MAUVE */
@@ -121,23 +121,23 @@ aside li:last-child {
 
 /*  A REVOIR !!! */
 #contenerAvatar {
-display: flex;
-flex-direction: row; /* valeur par defaut... */
-justify-content: center;
+	display: flex;
+	flex-direction: row; /* valeur par defaut... */
+	justify-content: center;
  
-align-items: center;
+	align-items: center;
 }
 /* POSITIONNEMENT DE L ENFANT NE SERT PAS !!! */
 .deux {
-display: flex;
-flex-direction: row; /* valeur par defaut... */
+	display: flex;
+	flex-direction: row; /* valeur par defaut... */
 /* justify-content:flex-end;	*/			 /* NE FONCTIONNE PAS */
 }
 
 #avatar {
-width: 100px;
-height: 100px;
-  border: none;
+	width: 100px;
+	height: 100px;
+  	border: none;
   /* -moz-border-radius :  50%;
   -webkit-border-radius :  50%;
   border-radius :  50%; */
@@ -154,9 +154,9 @@ height: 100px;
 
 /*  PROBLEME ETIREMENT DE LA BOITE */
 #propos {
-display: flex;
-flex-direction: column;
-flex: 2 1 0; 								/* NE FONCTIONNE PAS */
+	display: flex;
+	flex-direction: column;
+	flex: 2 1 0; 								/* NE FONCTIONNE PAS */
 
 }
 
@@ -223,7 +223,7 @@ h2 {
 }	
 	
 h2.titreMain {
-padding-left: 1em;
+	padding-left: 1em;
 
 }
 
@@ -334,34 +334,34 @@ main p {
 
 
 p.texte {
-font-size: 0.6em;
-text-align: left;
+	font-size: 0.6em;
+	text-align: left;
 }
 
 p.intitule {
-font-size: 0.7em;
-font-weight: bold;
+	font-size: 0.7em;
+	font-weight: bold;
 }
 
 p.lieuFonction {
-font-size: 0.6em;
-text-align: left;
-margin-top: -0.8em;
+	font-size: 0.6em;
+	text-align: left;
+	margin-top: -0.8em;
 }
 
 p.textDescription {
-margin-top: -0.6em;
+	margin-top: -0.6em;
 }
 
 p.recommFat {
-font-size: 0.6em;
-font-weight: bold;
-line-height: 0;
+	font-size: 0.6em;
+	font-weight: bold;
+	line-height: 0;
 }
 
 p.recommLight {
-font-size: 0.6em;
-font-weight: normal;
-line-height: 0;
+	font-size: 0.6em;
+	font-weight: normal;
+	line-height: 0;
 }
 
