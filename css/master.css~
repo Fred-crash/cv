@@ -137,38 +137,23 @@ aside li:last-child {
 /*  A REVOIR !!! */
 #contenerAvatar {
 	display: flex;
-	flex-direction: column; /* valeur par defaut... */ row ou loumn ne change rien !!! 
+	flex-direction: column; /* valeur par defaut... */
 
 justify-content: center; /* les deux déclarations sont obligatoires  alors que dans les exemples, seul align-items:center; devrait suffire !!!!  */
-align-items: center ; 
+align-items: center ;  /* dezpuis img dans p, tout inutile !!! */
 
 /* object-position: center;  */
-align-self: center;
-	
-	/*width: 100%;
-	height: 200px; */
-}
-/* POSITIONNEMENT DE L ENFANT NE SERT PAS !!! */
-.deux {
-	display: flex;
-	flex-direction: row; /* valeur par defaut... */
-/* justify-content:flex-end;	*/			 /* NE FONCTIONNE PAS */
+/* align-self: center; */
+
+width: 90px;
+height: 90px; 
+
+
 }
 
 #avatar {
 width: 75px;
 height: 75px;
-  	/*border: none; */
-  /* -moz-border-radius :  50%;
-  -webkit-border-radius :  50%;
-  border-radius :  50%; */
-}
-
-#avatar2 {
-display: flex;       
-align-items: center ; /* ne sert à rein !!! */
-align-self: center; /* ne sert à rein !!! */
-
   	/*border: none; */
   /* -moz-border-radius :  50%;
   -webkit-border-radius :  50%;
