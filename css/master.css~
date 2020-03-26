@@ -1,74 +1,63 @@
 /* CSS CV OPENCLASSROOM 
-######### rev0.3 #########
+######### rev1.0 #########
 ######### 22/03  #########
 */
 
+@viewport {
+   width: device-width; /* largeur du viewport */
+   zoom: 1; /* zoom initial à 1.0, balise équivalente en HTML à [meta viewport] */
+}
 
 
-@media all and(max-device-width:480px) {
-#global {
-	flex-direction: column;
+/* The following code will apply if the max-device-width is 480px (eg. iPhone display). Note: max-device-width means the actual resolution of the device 
+and max-width means the viewing area resolution. */
+
+/* REGLES POUR MOBILE  surface reele */
+@media screen and (max-device-width: 640px) {
+
+	#global {
+		display: flex;
+		/* width:100%; non... */
+		flex-direction: column;
+		flex-wrap: wrap;
+
+	}	
+	/* MAIN */
+	#contener {
+		display: flex;
+		flex: 100%;
+		flex-direction: column;
+		order: 2;
+		
+		margin-left: 1.8em;
+		margin-right: 1.5em;
+		background-color:rgba(255,255,255,1); 
 	}
-aside { flex: 100%; }
-section { flex: 100%; }	
+	/* ASIDE parent */
+	#col01 {
+		display: flex;
+		flex: 100%;
+		flex-direction: row;
+		
+		width: 100%;
+		order: -1;
+	}
+
+	#col01-cell01 {
+		display: flex;
+	
+	order: -1;
+	}
+
+}
+
+/* REGLES POUR TABLETTE  surface reele */
+@media screen and (min-width: 641px) and (max-width: 1024px) {
+
 }
 
 
-
-/* SECTION ICONES FONT AWESOME */
-
-.fa-circle, .fa-dot-circle,  .fa-briefcase, .fa-pencil-alt, .fa-graduation-cap {
-	color: rgba(103,58,183 ,1); 
-/* fill: rgba(103,58,183 ,1); proprité SVG NON SUPPORTEES !! mdr... 
- stroke: rgba(103,58,183 ,1); 
- stroke-width: 2px; */ 
-}
-
-.fa-dot-circle {
-	font-size: 0.6em; 
-	padding-right: 0.7em;
-}
-
-.fa-circle {
-	font-size: 0.4em;
-	padding-right: 0.7em;
-}
-
-
-.fa-igloo, .fa-music, .fa-raspberry-pi{
-	color: rgba(103,58,183 ,1); 
-	font-size: 1.5em;
-}
-/* UTILIER BEFORE ET AFTER SUPPERPOSITION AVEC PUCE */
-
-/* CARACTERES UNICODES
-
-RAPSBERRY : "\f7bb" prefix: fab 
-IGLOO : "\f7ae"    prefix: fas
-MUSIC : "\f001"    prefix: fas
-CIRLCE: "\f111"    prefix: far 
-
-Syntax:
-
-.maClasse:: before {
-content: "\f7bb";
-}
-
-*/
-.fa-border-icon {
-    border-width: 1px;
-    border-style: solid;
-    border-color: rgba(103,58,183 ,1);
-   /* border-image: initial; */
-   /* border-radius: 50% 50% 50% 50%; */
-  	-moz-border-radius :  50%;
-  	-webkit-border-radius :  50%;
-  	border-radius :  50%;
-  	padding: 2% 2% 2% 2%; /*  a revoir */  
-}
-
-
-
+/* REGLE POUR DESKTOP */
 #global {
 	display: flex;
 	flex-direction: row;
@@ -78,16 +67,32 @@ content: "\f7bb";
 /* flex-wrap: wrap; met ASIDE à 100 %... */
 }
 
+/* SECTION ASIDE */
+
+/* BLOCK ASIDE*/
 aside {
 	border: 1px solid black;
 	display: flex;
 	flex-direction: column;
-	flex: 35%;
-
+	flex: 30%;
 	background-color: rgba(209,196,233 ,1); 
 }
 
-/*  BARRE ASIDE MAUVE */
+#contenerAvatar {
+	display: flex;
+	justify-content: center;  
+	align-items: center ; 
+	height: 190px; 
+}
+
+#avatar {
+	width: 130px;
+	height: 130px;
+	-moz-border-radius : 50%;
+	-webkit-border-radius : 50%;
+	border-radius : 50%;
+}
+
 aside h2, aside p, aside li {
 	display: flex;
 	flex-direction: column;
@@ -99,6 +104,48 @@ aside h2, aside p, aside li {
 
 }
 
+#propos {
+	display: flex;
+	flex-direction: column;
+	flex-grow: 3; 	/* NE FONCTIONNE PAS */
+
+}
+
+#loisir {
+	display: flex; 
+	flex-direction: column;
+	flex-shrink: 0;
+}
+
+#icoLoisir {
+	display: flex; /* les DIV > IMG n'héritent pas du parent ASIDE !!! */
+				
+	flex-direction: row;
+
+	flex-wrap: wrap;
+
+	align-content: space-between;
+	justify-content: space-evenly;
+	
+	margin-top: 25px;
+	margin-bottom: 10px;
+}
+
+/* Agrandissement cell proppos */
+#col01-cell03 {
+	display: flex;
+	flex-grow: 2;
+}
+
+
+/* ICONE COLONNE GAUCHE CELLULE 04 */
+.iconeCell04 {
+	width: 50px;
+	height: 50px;
+}
+
+
+/* TEXTE ASIDE */
 aside h2 {
 	font-size: 0.9em;
 	font-weight: bold;
@@ -117,7 +164,16 @@ aside p {
 	padding-right: 1.9em;
 }
 
-/* LISTE SANS PUCE */
+#contact {
+	font-family: "Font Awesome 5 Free";
+	font-style: normal;
+	font-size: 1em;
+	font-weight: normal;
+	color: rgba(0,0,0,1);
+}
+
+
+/* LISTE SANS PUCE ASIDE */
 aside li {
 	list-style-type: none;	
 	font-size: 0.7em;
@@ -133,149 +189,26 @@ aside li:nth-child(2n) {
 aside li:last-child {
 	padding-bottom: 0;
 }
-
-/*  A REVOIR !!! */
-#contenerAvatar {
-	display: flex;
-	justify-content: center;  
-	align-items: center ; 
-width: 190px;
-	height: 190px; /* A fixer !!! comme sur la maquette !!! */ 
-}
-
-#avatar {
-width: 130px;
-height: 130px;
-  	/*border: none; */
--moz-border-radius :  50%;
--webkit-border-radius :  50%;
-border-radius :  50%;
-}
-
-#contact {
-	font-family: "Font Awesome 5 Free";
-	font-style: normal;
-	font-size: 1em;
-	font-weight: normal;
-	color: rgba(0,0,0,1);
-}
-
-/*  PROBLEME ETIREMENT DE LA BOITE */
-#propos {
-	display: flex;
-	flex-direction: column;
-	flex-grow: 3; 								/* NE FONCTIONNE PAS */
-
-}
-
-/* Block loisir  !!! bloquer son redimenssionement !!! */
-#loisir {
-display: flex; 
-flex-direction: column;
-flex-shrink: 0;
-}
-
-#icoLoisir {
-	display: flex; /* les DIV > IMG n'héritent pas du parent ASIDE !!! */
-	/*flex: 0 0 0;		 */					/* NE FONCTIONNE PAS */
-	flex-direction: row;
+/* FIN SECTION BLOCK ET TEXTE ASIDE */
 
 
-	flex-wrap: wrap;
-
-	align-content: space-between;
-	justify-content: space-evenly;
-
-	object-position: center; /* FONCTIONNE PAS !!! align-vertical  aucun support pour ie... */
-	object-fit: cover;       /* FONCTIONNE PAS !!! align-vertical  */
-	
-	margin-top: 25px;
-	margin-bottom: 10px;
-}
-
-/* ICONE COLONNE GAUCHE CELLULE 04 */
-.iconeCell04 {
-	width: 50px;
-	height: 50px;
-}
 
 
-/* CONTENEUR MAIN  */
-#contener {
-	display: flex; /* en mettant la propriété: une marge importante entre le contener et le titre ! redondance avec section !!  */
-	flex: 70%;
-	flex-direction: column;
-	margin-left: 1.8em;
-	margin-right: 1.5em;
-	background-color:rgba(255,255,255,1); 
-}
+/*  SECTION CONTENEUR MAIN  */
 
 main > section {
 	margin-top: 1.5em;
 	margin-bottom: 1.5em;
 }
 
-/* TITRES CV */
-h1, h2, h3 {
-	font-family: "Font Awesome 5 Free";
-	font-size: 0.9em;
-	font-style: normal;
-	font-weight: normal;
-	color: rgba(0,0,0,1);
-	text-align: left;
-
+#contener {
+	display: flex;
+	flex: 70%;
+	flex-direction: column;
+	margin-left: 1.8em;
+	margin-right: 1.5em;
+	background-color:rgba(255,255,255,1); 
 }
-
-/* ENTETE CV */
-h1 {
-	font-size: 2.5em;
-	font-weight: lighter;
-	letter-spacing: -0.1em;
-
-}
-/* TITRE SECTION */
-h2 {
-	font-size: 1em;
-	font-weight: bold;
-}	
-	
-h2.titreMain {
-	padding-left: 1em;
-
-}
-
-#prenom {
-	color: rgba(209,196,233 ,1);
-	font-weight: normal;
-}
-
-/* SOUS TITRE CV */
-h3 {
-	font-size: 1em;
-	font-weight: bold;
-	margin-top: -2em;
-}
-
-h3 > span {
-	
-	text-decoration: underline solid rgba(209,196,233 ,1);
-	text-underline-position: under; /* Pas de support sous firefox ni safari ! */
-}
-
-h4 {
-	font-family: "Font Awesome 5 Free";
-	font-style: normal;
-	font-weight: normal;
-	font-size: 1em;
-	color: rgba(0,0,0,1);
-	text-align: left;
-	/* padding-left: 30px; */
-	/* ATTENTION UTILISER H4 CREE UNE MARGE TOP PLUS IMPORTANTE QUE LE TEXTE P !!! 
-	PREFERER TITRE TEXTE !!! */
-}
-
-
-
 
 
 .enteteSection {
@@ -287,8 +220,6 @@ h4 {
 	justify-content: flex-start;
 	border-bottom: 1px solid rgba(103,58,183 ,1);
 	width: 100%;
-	/* margin-top: 3em; */
-	
 }
 
 .contenerSection {
@@ -304,14 +235,9 @@ h4 {
 	align-items: stretch; /* etirement de l element valeur defaut */
 }
 
-
-
-/* conterner parent */
-/* div > i[class="puce"] */
-
 .contenerpuce { 
 	display: flex;
-flex:5%;
+	flex:5%;
 	flex-direction: column;
 	
 /* justify-content: center; */	/* axe principal  */
@@ -349,10 +275,6 @@ flex:5%;
 	display: flex;
 	flex: 55%;
 	flex-direction: column;
-	
-/*	padding-left: 1em; */
-/* padding-right: 1em; */
-
 	border: 1px solid rgba(103,58,183 ,1);
 }
 
@@ -364,16 +286,69 @@ flex:5%;
 	border: 1px solid rgba(103,58,183 ,1);
 }
 
-main p {
+/*  FIN SECTION CONTENEUR MAIN  */
+
+/*  SECTION TEXTE MAIN  */
+/* TITRE CV */
+h1, h2, h3 {
 	font-family: "Font Awesome 5 Free";
+	font-size: 0.9em;
 	font-style: normal;
 	font-weight: normal;
 	color: rgba(0,0,0,1);
 	text-align: left;
 
 }
+/* ENTETE CV */
+h1 {
+	font-size: 2.5em;
+	font-weight: lighter;
+	letter-spacing: -0.1em;
 
-/* meytre ajouter 01. em à ,chaque poilice !!!  */
+}
+/* TITRE SECTION */
+h2 {
+	font-size: 1em;
+	font-weight: bold;
+}	
+	
+h2.titreMain {
+	padding-left: 1em;
+}
+
+#prenom {
+	color: rgba(209,196,233 ,1);
+	font-weight: normal;
+}
+/* SOUS TITRE CV */
+h3 {
+	font-size: 1em;
+	font-weight: bold;
+	margin-top: -2em;
+}
+h3 > span {
+	
+	text-decoration: underline solid rgba(209,196,233 ,1);
+	text-underline-position: under; /* Pas de support sous firefox ni safari ! */
+}
+
+h4 {
+	font-family: "Font Awesome 5 Free";
+	font-style: normal;
+	font-weight: normal;
+	font-size: 1em;
+	color: rgba(0,0,0,1);
+	text-align: left;
+}
+
+/* SECTION TEXTE MAIN */
+main p {
+	font-family: "Font Awesome 5 Free";
+	font-style: normal;
+	font-weight: normal;
+	color: rgba(0,0,0,1);
+	text-align: left;
+}
 
 p.texte {
 	font-size: 0.7em;
@@ -394,8 +369,8 @@ p.lieuFonction {
 p.fonction {
 	font-size: 0.6em;
 	text-align: left;
-margin-top: -0.5em;
-margin-bottom: 1.5em;
+	margin-top: -0.5em;
+	margin-bottom: 1.5em;
 }
 
 p.textDescription {
@@ -413,4 +388,64 @@ p.recommLight {
 	font-weight: normal;
 	line-height: 0;
 }
+/* FIN SECTION TEXTE MAIN */
 
+/* SECTION ICONES FONT AWESOME */
+.fa-circle, .fa-dot-circle,  .fa-briefcase, .fa-pencil-alt, .fa-graduation-cap {
+	color: rgba(103,58,183 ,1); 
+}
+
+.fa-dot-circle {
+	font-size: 0.6em; 
+	padding-right: 0.7em;
+}
+
+.fa-circle {
+	font-size: 0.4em;
+	padding-right: 0.7em;
+}
+
+.fa-igloo, .fa-music, .fa-raspberry-pi{
+	color: rgba(103,58,183 ,1); 
+	font-size: 1.5em;
+}
+
+/* BORDURES ICONES LOISIRS */
+.fa-border-igloo, .fa-border-croche, .fa-border-rasp {
+    border-width: 1px;
+    border-style: solid;
+    border-color: rgba(103,58,183 ,1);
+  	-moz-border-radius :  50%;
+  	-webkit-border-radius :  50%;
+  	border-radius :  50%;
+}
+
+.fa-border-igloo {
+	padding: 2% 2% 3% 2%; 
+}
+
+.fa-border-croche {
+  	padding: 2% 3% 3% 2%; 
+}
+
+.fa-border-rasp {
+  	padding: 2% 3% 2% 3%; 
+}
+/* FIN SECTION ICONES FONT AWESOME */
+
+/* UTILIER BEFORE ET AFTER SUPPERPOSITION AVEC PUCE */
+
+/* CARACTERES UNICODES
+
+RAPSBERRY : "\f7bb" prefix: fab 
+IGLOO : "\f7ae"    prefix: fas
+MUSIC : "\f001"    prefix: fas
+CIRLCE: "\f111"    prefix: far 
+
+Syntax:
+
+.maClasse:: before {
+content: "\f7bb";
+}
+
+*/

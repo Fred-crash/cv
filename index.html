@@ -3,7 +3,7 @@
 
 	<head>
 		<meta charset="UTF-8" />
-		<meta name="viewport" content="width=device-width" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<script src="https://kit.fontawesome.com/4da757471e.js" crossorigin="anonymous"></script>
 
 
@@ -16,16 +16,16 @@
 <!-- DIV largeur cv max ecran -->
 		<div id="global">
 
-			<aside>
+			<aside id="col01">
 <!-- cell 01 -->
-				<section> <!--  W3C METTRE UN TITRE h2-h6 -->
+				<section id="col01-cell01"> 
 					<div id="contenerAvatar">
 						<img src="images/avatar.svg" alt="mon avatar" id="avatar" />
 					</div>
 				</section>
 
 <!-- cell 02 -->
-				<section>
+				<section class="col01-cell02">
 					<div id="contact">
 						<h2>CONTACT</h2>
 						<ul>
@@ -48,7 +48,7 @@
 				</section>
 
 <!-- cell 03 -->
-				<section>
+				<section id="col01-cell03" class="col01-cell03">
 					<div>
 						<h2>&#192; PROPOS DE MOI</h2>
 						<p id="propos">Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, 
@@ -56,20 +56,20 @@
 					</div>
 				</section>
 <!-- cell 04 -->
-				<section>
+				<section class="col01-cell04">
 					<div id="loisir">
 						<h2>LOISIRS</h2>
 						<div id="icoLoisir"><!-- fa-border:: bordure rectangulaire -->
-							<i class="fas fa-igloo fa-border-icon"></i>
-							<i class="fas fa-music fa-border-icon"></i>
-							<i class="fab fa-raspberry-pi fa-border-icon"></i>
+							<i class="fas fa-igloo fa-border-igloo"></i>
+							<i class="fas fa-music fa-border-croche"></i>
+							<i class="fab fa-raspberry-pi fa-border-rasp"></i>
 						</div>
 					</div>
 				</section>
 			</aside>
 
 
-			<main id="contener">
+			<main id="contener" class="col02">
 				<section>
 					<header>
 			 			<h1><span id="prenom">FREDERIC</span> DUMAS</h1>
