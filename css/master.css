@@ -64,7 +64,7 @@ content: "\f7bb";
   	-moz-border-radius :  50%;
   	-webkit-border-radius :  50%;
   	border-radius :  50%;
-  	padding: 2% 2% 2% 2%; 
+  	padding: 2% 2% 2% 2%; /*  a revoir */  
 }
 
 
@@ -110,7 +110,7 @@ aside h2 {
 }
 
 aside p {
-	font-size: 0.6em;
+	font-size: 0.7em;
 	color: rgba(103,58,183 ,1);
 	text-align: justify;
 	padding-left: 1.9em;
@@ -120,7 +120,7 @@ aside p {
 /* LISTE SANS PUCE */
 aside li {
 	list-style-type: none;	
-	font-size: 0.6em;
+	font-size: 0.7em;
 	color: rgba(103,58,183 ,1);
 	text-align: left;
 	margin-left: -1.3em;
@@ -137,27 +137,19 @@ aside li:last-child {
 /*  A REVOIR !!! */
 #contenerAvatar {
 	display: flex;
-	flex-direction: column; /* valeur par defaut... */
+	justify-content: center;  
+	align-items: center ; 
 
-justify-content: center; /* les deux déclarations sont obligatoires  alors que dans les exemples, seul align-items:center; devrait suffire !!!!  */
-align-items: center ;  /* dezpuis img dans p, tout inutile !!! */
-
-/* object-position: center;  */
-/* align-self: center; */
-
-
-height: 300px; 
-
-
+	height: 190px; /* A fixer !!! comme sur la maquette !!! */ 
 }
 
 #avatar {
-width: 75px;
-height: 75px;
+width: 130px;
+height: 130px;
   	/*border: none; */
-  /* -moz-border-radius :  50%;
-  -webkit-border-radius :  50%;
-  border-radius :  50%; */
+-moz-border-radius :  50%;
+-webkit-border-radius :  50%;
+border-radius :  50%;
 }
 
 #contact {
@@ -172,22 +164,33 @@ height: 75px;
 #propos {
 	display: flex;
 	flex-direction: column;
-	flex: 2 1 0; 								/* NE FONCTIONNE PAS */
+	flex-grow: 3; 								/* NE FONCTIONNE PAS */
 
+}
+
+/* Block loisir  !!! bloquer son redimenssionement !!! */
+#loisir {
+display: flex; 
+flex-direction: column;
+flex-shrink: 0;
 }
 
 #icoLoisir {
 	display: flex; /* les DIV > IMG n'héritent pas du parent ASIDE !!! */
-	flex: 0 0 0;							/* NE FONCTIONNE PAS */
+	/*flex: 0 0 0;		 */					/* NE FONCTIONNE PAS */
 	flex-direction: row;
 
 
 	flex-wrap: wrap;
-	justify-content: space-around;
+
 	align-content: space-between;
+	justify-content: space-evenly;
 
 	object-position: center; /* FONCTIONNE PAS !!! align-vertical  aucun support pour ie... */
 	object-fit: cover;       /* FONCTIONNE PAS !!! align-vertical  */
+	
+	margin-top: 25px;
+	margin-bottom: 10px;
 }
 
 /* ICONE COLONNE GAUCHE CELLULE 04 */
@@ -202,16 +205,14 @@ height: 75px;
 	display: flex; /* en mettant la propriété: une marge importante entre le contener et le titre ! redondance avec section !!  */
 	flex: 70%;
 	flex-direction: column;
-	margin-left: 2.5em;
-	margin-right: 2.5em;
+	margin-left: 1.8em;
+	margin-right: 1.5em;
 	background-color:rgba(255,255,255,1); 
 }
 
-section {
-	/* display: flex; */
-	/* Si pas de proprité flex sur section: marge moins importante entre contener et titre !!  */
-	/* flex: 100%;
-	flex-direction: column; */
+main > section {
+	margin-top: 1.5em;
+	margin-bottom: 1.5em;
 }
 
 /* TITRES CV */
@@ -222,7 +223,7 @@ h1, h2, h3 {
 	font-weight: normal;
 	color: rgba(0,0,0,1);
 	text-align: left;
-	
+
 }
 
 /* ENTETE CV */
@@ -286,6 +287,8 @@ h4 {
 	justify-content: flex-start;
 	border-bottom: 1px solid rgba(103,58,183 ,1);
 	width: 100%;
+	/* margin-top: 3em; */
+	
 }
 
 .contenerSection {
@@ -297,39 +300,60 @@ h4 {
 .contenerSousSection {
 	display: flex;
 	flex-direction: row; 
+	justify-content: flex-start;	/* element positine debut axe principal valeur par defaut */
+	align-items: stretch; /* etirement de l element valeur defaut */
 }
 
 
 
+/* conterner parent */
+/* div > i[class="puce"] */
 
-.puce{
+.contenerpuce { 
 	display: flex;
-	flex: 0.2em;
-	flex-direction: row;
-	flex-shrink: 0;
-	padding-top: 0.6em;
+flex:5%;
+	flex-direction: column;
 	
-	border: 0px solid rgba(103,58,183 ,1);
+/* justify-content: center; */	/* axe principal  */
+/* flex-shrink: 0; */
+
+	border: 1px solid rgba(103,58,183 ,1);
+}
+
+.puceDot, .puceCircle {
+	display: flex;
+	align-self: flex-start;
+/*	align-self: center; */
+/* align-items: center; /* axe secondaire */		
+	border: 1px solid rgba(103,58,183 ,1);
+}
+
+.puceDot {
+	padding-top: 1.2em;
+}
+
+.puceCircle {
+	padding-top: 1.8em;
 }
 
 .date {
 	display: flex;
-	flex: 30%;
+	flex: 40%;
 	flex-direction: column;
 	flex-shrink: 0;
 
-	border: 0px solid rgba(103,58,183 ,1);
+	border: 1px solid rgba(103,58,183 ,1);
 }
 
 .description {
 	display: flex;
-	flex: 50%;
+	flex: 55%;
 	flex-direction: column;
 	
-	padding-left: 1em;
+/*	padding-left: 1em; */
 /* padding-right: 1em; */
 
-	border: 0px solid rgba(103,58,183 ,1);
+	border: 1px solid rgba(103,58,183 ,1);
 }
 
 .recommandation {
@@ -337,7 +361,7 @@ h4 {
 	flex-direction: column;
 	flex: 50%;
 	
-	border: 0px solid rgba(103,58,183 ,1);
+	border: 1px solid rgba(103,58,183 ,1);
 }
 
 main p {
@@ -346,11 +370,13 @@ main p {
 	font-weight: normal;
 	color: rgba(0,0,0,1);
 	text-align: left;
+
 }
 
+/* meytre ajouter 01. em à ,chaque poilice !!!  */
 
 p.texte {
-	font-size: 0.6em;
+	font-size: 0.7em;
 	text-align: left;
 }
 
@@ -363,6 +389,13 @@ p.lieuFonction {
 	font-size: 0.6em;
 	text-align: left;
 	margin-top: -0.8em;
+}
+
+p.fonction {
+	font-size: 0.6em;
+	text-align: left;
+margin-top: -0.5em;
+margin-bottom: 1.5em;
 }
 
 p.textDescription {
