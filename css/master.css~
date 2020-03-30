@@ -58,7 +58,7 @@ max-width:640px;
 /*  TITRE CV  */
 .col-02-cel01 {
 display: flex;
-max-width:640px;
+max-width:640px;-
 }
 h1, h3 {
 font-size: 10px;
@@ -238,7 +238,7 @@ main > section {
 	align-content: flex-start;
 	align-items: center; /* A REVOIR !! */
 	justify-content: flex-start;
-	border-bottom: 1px solid rgba(103,58,183 ,1);
+	border-bottom: 0px solid rgba(103,58,183 ,1);
 	width: 100%;
 }
 
@@ -263,7 +263,7 @@ main > section {
 /* justify-content: center; */	/* axe principal  */
 /* flex-shrink: 0; */
 
-	border: 1px solid rgba(103,58,183 ,1);
+	border: 0px solid rgba(103,58,183 ,1);
 }
 
 .puceDot, .puceCircle {
@@ -271,7 +271,7 @@ main > section {
 	align-self: flex-start;
 /*	align-self: center; */
 /* align-items: center; /* axe secondaire */		
-	border: 1px solid rgba(103,58,183 ,1);
+	border: 0px solid rgba(103,58,183 ,1);
 }
 
 .puceDot {
@@ -288,14 +288,14 @@ main > section {
 	flex-direction: column;
 	flex-shrink: 0;
 
-	border: 1px solid rgba(103,58,183 ,1);
+	border: 0px solid rgba(103,58,183 ,1);
 }
 
 .description {
 	display: flex;
 	flex: 55%;
 	flex-direction: column;
-	border: 1px solid rgba(103,58,183 ,1);
+	border: 0px solid rgba(103,58,183 ,1);
 }
 
 .recommandation {
@@ -303,7 +303,7 @@ main > section {
 	flex-direction: column;
 	flex: 50%;
 	
-	border: 1px solid rgba(103,58,183 ,1);
+	border: 0px solid rgba(103,58,183 ,1);
 }
 
 /*  FIN SECTION CONTENEUR MAIN  */
