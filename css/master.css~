@@ -24,7 +24,7 @@ desktop: > 1200px					1170px
 
 	#global {
 		display: flex;
-max-width:640px;
+		max-width:640px;
 		flex-direction: column;
 		flex-wrap: wrap;
 
@@ -32,7 +32,7 @@ max-width:640px;
 	/* MAIN */
 	#contener {
 		display: flex;
-max-width:640px;
+		max-width:640px;
 		flex-direction: column;
 		order: 2;
 		
@@ -56,13 +56,13 @@ max-width:640px;
 	order: -1;
 	}
 /*  TITRE CV  */
-.col-02-cel01 {
-display: flex;
-max-width:640px;-
-}
-h1, h3 {
-font-size: 10px;
-}
+	.col02-cel01 {
+		display: flex;
+		max-width:640px;
+	}
+	h1, h3 {
+		font-size: 10px;
+	}
 
 }
 
@@ -91,7 +91,7 @@ img {
 
 /* BLOCK ASIDE*/
 aside {
-	border: 1px solid black;
+	border: 0px solid black;
 	display: flex;
 	flex-direction: column;
 	flex: 30%;
@@ -238,7 +238,7 @@ main > section {
 	align-content: flex-start;
 	align-items: center; /* A REVOIR !! */
 	justify-content: flex-start;
-	border-bottom: 0px solid rgba(103,58,183 ,1);
+	border-bottom: 1px solid rgba(103,58,183 ,1);
 	width: 100%;
 }
 
