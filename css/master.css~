@@ -11,13 +11,20 @@
 
 /* The following code will apply if the max-device-width is 480px (eg. iPhone display). Note: max-device-width means the actual resolution of the device 
 and max-width means the viewing area resolution. */
+/* REGLES BOOTSTRAP */
+/*
+phones: < 768px contener width: auto
+tablets: > 768px					750px
+desktop: > 992px					970px
+desktop: > 1200px					1170px
+*/
 
 /* REGLES POUR MOBILE  surface reele */
 @media screen and (max-device-width: 640px) {
 
 	#global {
 		display: flex;
-		/* width:100%; non... */
+max-width:640px;
 		flex-direction: column;
 		flex-wrap: wrap;
 
@@ -25,7 +32,7 @@ and max-width means the viewing area resolution. */
 	/* MAIN */
 	#contener {
 		display: flex;
-		flex: 100%;
+max-width:640px;
 		flex-direction: column;
 		order: 2;
 		
@@ -37,9 +44,9 @@ and max-width means the viewing area resolution. */
 	#col01 {
 		display: flex;
 		flex: 100%;
-		flex-direction: row;
+		flex-direction: column;
 		
-		width: 100%;
+	max-width:640px;
 		order: -1;
 	}
 
@@ -48,16 +55,29 @@ and max-width means the viewing area resolution. */
 	
 	order: -1;
 	}
+/*  TITRE CV  */
+.col-02-cel01 {
+display: flex;
+max-width:640px;
+}
+h1, h3 {
+font-size: 10px;
+}
 
 }
 
-/* REGLES POUR TABLETTE  surface reele */
+/* REGLES POUR TABLETTE  surface reele  paysage ? ou protrait ? */
 @media screen and (min-width: 641px) and (max-width: 1024px) {
 
 }
 
 
-/* REGLE POUR DESKTOP */
+/* ########### REGLES POUR DESKTOP ########### */
+img {
+	max-width :100% ;
+	height :auto ;
+}
+
 #global {
 	display: flex;
 	flex-direction: row;
