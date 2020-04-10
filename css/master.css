@@ -40,9 +40,9 @@ aside {
 
 #contenerAvatar {
 	display: flex;
-	justify-content: center;  
-	align-items: center ; 
 	height: 190px; 
+   justify-content: center; 
+   align-items: center; 
 }
 
 #avatar {
@@ -51,7 +51,6 @@ aside {
 	-moz-border-radius : 50%;
 	-webkit-border-radius : 50%;
 	border-radius : 50%;
-
 }
 
 aside h2, aside p, aside li {
@@ -422,12 +421,13 @@ desktop: > 992px					970px
 desktop: > 1200px					1170px
 */
 
-/* REGLES POUR MOBILE  surface reele ???  */
-@media screen and (max-device-width: 640px) {
+/* REGLES POUR MOBILE ORIENTATION PORTRAIT */
+@media screen and (max-device-width: 767px) and (orientation: portrait) {
 
 	#global {
 		display: flex;
-		max-width:300px;
+		width: auto; /* definir la width par defaut !  sinon max-width sera la valeur par défaut !!  */
+		max-width:767px; 
 		flex-direction: column;
 		flex-wrap: wrap;
 
@@ -435,39 +435,55 @@ desktop: > 1200px					1170px
 	/* MAIN */
 	#contener {
 		display: flex;
-		max-width:300px;
+		max-width:320px;
 		flex-direction: column;
 		order: 2;
-		
 		margin-left: 1.8em;
 		margin-right: 1.5em;
 		background-color:rgba(255,255,255,1); 
 	}
+	
+	#contenerAvatar {
+		display: flex;
+		height: 190px; 
+   	justify-content: center; 	 /*  pas ok*/
+   	align-items: center;  		/* pas ok */
+  		margin: 0 auto;  				/* fonctionne */
+	}
+
+	#avatar {
+		width: 130px;
+		height: 130px;
+		-moz-border-radius : 50%;
+		-webkit-border-radius : 50%;
+		border-radius : 50%;
+	}	
+	
 	/* ASIDE parent */
 	#col01 {
 		display: flex;
 		flex: 100%;
 		flex-direction: column;
-		
-	/* max-width:640px; */
 		order: -1;
 	}
 
 	#col01-cell01 {
 		display: flex;
-	
-	order: -1;
+		order: -1;
 	}
-/*  TITRE CV  */
+	/*  TITRE CV  */
 	.col 02-cel01 {
 		display: flex;
-		max-width:640px;
-	}
-	h1, h3 {
-		font-size: 10px;
+		max-width:767px;
 	}
 
+
+
 }
+
+
+
+
 
 /* REGLES POUR TABLETTE  surface reele  paysage ? ou protrait ? */
 @media screen and (min-device-width: 641px) and (max-width: 1024px) {
