@@ -1,6 +1,6 @@
 /* CSS CV OPENCLASSROOM 
-######### rev1.0 #########
-######### 22/03  #########
+######### rev 2.0 #########
+######### 12/04   #########
 */
 
 @viewport {
@@ -8,300 +8,78 @@
    zoom: 1; /* zoom initial à 1.0, balise équivalente en HTML à [meta viewport] */
 }
 
-
-
-
-/* ########### REGLES POUR DESKTOP ########### */
-/* mettre au début si pas de règle media queries, question heritage css */
+/* ######### REGLES GENERIQUES ######### */
+body {
+	margin: 0;
+	padding: 0px;
+	font-size: 100%
+}
+   
 img {
 	max-width :100% ;
 	height :auto ;
 }
 
-#global {
-	display: flex;
-	flex-direction: row;
-	margin: 0 auto;
-	width: 670px; /* screen */
-	border: black 1px solid;
-/* flex-wrap: wrap; met ASIDE à 100 %... */
-}
-
-/* SECTION ASIDE */
-
-/* BLOCK ASIDE*/
+/* ######### BLOCK ASIDE ######### */
 aside {
-	border: 0px solid black;
-	display: flex;
-	flex-direction: column;
-	flex: 30%;
-	background-color: rgba(209,196,233 ,1); 
-}
-
-#contenerAvatar {
-	display: flex;
-	height: 190px; 
-   justify-content: center; 
-   align-items: center; 
-}
-
-#avatar {
-	width: 130px;
-	height: 130px;
-	-moz-border-radius : 50%;
-	-webkit-border-radius : 50%;
-	border-radius : 50%;
-}
-
-aside h2, aside p, aside li {
-	display: flex;
-	flex-direction: column;
-	flex: 100%;
-	background-color: rgba(209,196,233 ,1); 
-	font-family: "Font Awesome 5 Free";
-	font-style: normal;
-	font-weight: normal;
-
-}
-
-#propos {
-	display: flex;
-	flex-direction: column;
-	flex-grow: 3; 	/* NE FONCTIONNE PAS */
-
-}
-
-#loisir {
-	display: flex; 
-	flex-direction: column;
-	flex-shrink: 0;
-}
-
-#icoLoisir {
-	display: flex; /* les DIV > IMG n'héritent pas du parent ASIDE !!! */
-				
-	flex-direction: row;
-
-	flex-wrap: wrap;
-
-	align-content: space-between;
-	justify-content: space-evenly;
-	
-	margin-top: 25px;
-	margin-bottom: 10px;
-}
-
-/* Agrandissement cell proppos */
-#col01-cell03 {
-	display: flex;
-	flex-grow: 2;
-}
-
-
-/* ICONE COLONNE GAUCHE CELLULE 04 */
-.iconeCell04 {
-	width: 50px;
-	height: 50px;
-}
-
-
-/* TEXTE ASIDE */
-aside h2 {
-	font-size: 0.9em;
-	font-weight: bold;
-	color: rgba(209,196,233 ,1);
-	background-color: rgba(103,58,183 ,1);
-	text-align: center;
-	padding-top: 0.3em;
-	padding-bottom: 0.3em;	
+	background-color: rgba(209,196,233 ,1);
 }
 
 aside p {
-	font-size: 0.7em;
 	color: rgba(103,58,183 ,1);
 	text-align: justify;
-	padding-left: 1.9em;
-	padding-right: 1.9em;
 }
 
-#contact {
-	font-family: "Font Awesome 5 Free";
-	font-style: normal;
-	font-size: 1em;
-	font-weight: normal;
-	color: rgba(0,0,0,1);
-}
-
-
-/* LISTE SANS PUCE ASIDE */
 aside li {
 	list-style-type: none;	
-	font-size: 0.7em;
 	color: rgba(103,58,183 ,1);
 	text-align: left;
-	margin-left: -1.3em;
+}
+/* ######### ENTREE TITRE TEXTE ASIDE ######### */
+aside h2, { /* */
+		font-family: "Font Awesome 5 Free"; /* ok */
+		/* color: rgba(209,196,233 ,1); propriété non hérité !!! ???  */
+		/* background-color: rgba(103,58,183 ,1); propriété non hérité !!! ??? */
+		/* text-align: center; propriété non hérité !!! ??? */
 }
 
-aside li:nth-child(2n) {
-	padding-bottom: 0.6em;
+aside p {
+		font-family: "Font Awesome 5 Free";
+		text-align: justify;
 }
 
-aside li:last-child {
-	padding-bottom: 0;
-}
-/* FIN SECTION BLOCK ET TEXTE ASIDE */
-
-
-
-
-/*  SECTION CONTENEUR MAIN  */
-
-main > section {
-	margin-top: 1.5em;
-	margin-bottom: 1.5em;
+/* #########  BLOCK ICONES LOISIR #########  */
+#icoLoisir {
+		display: flex;
+		align-content: space-between;
+		justify-content: space-evenly;
 }
 
-#contener {
-	display: flex;
-	flex: 70%;
-	flex-direction: column;
-	margin-left: 1.8em;
-	margin-right: 1.5em;
+/* ######### BORDURES ICONES LOISIRS ######### */
+.fa-border-igloo, .fa-border-croche, .fa-border-rasp {
+   	border-width: 1px;
+   	border-style: solid;
+    	border-color: rgba(103,58,183 ,1);
+  		-moz-border-radius :  50%;
+  		-webkit-border-radius :  50%;
+  		border-radius :  50%;
+}
+
+.fa-border-igloo {
+		padding: 2% 2% 3% 2%; 
+}
+.fa-border-croche {
+  		padding: 2% 3% 3% 2%; 
+}
+.fa-border-rasp {
+  		padding: 2% 3% 2% 3%; 
+}
+	
+/* ######### BLOCK MAIN ######### */
+main {
 	background-color:rgba(255,255,255,1); 
 }
 
-
-.enteteSection {
-	display: flex; /* sinon retour à la ligne après IMG !! */
-	flex-direction: row;
-	flex-wrap: nowrap; /* valeur defaut */
-	align-content: flex-start;
-	align-items: center; /* A REVOIR !! */
-	justify-content: flex-start;
-	border-bottom: 1px solid rgba(103,58,183 ,1);
-	width: 100%;
-}
-
-.contenerSection {
-	display: flex; 
-	flex-direction: column; /* OK div en dessous des uns des autres ! */
-	flex: 100%;
-}
-
-.contenerSousSection {
-	display: flex;
-	flex-direction: row; 
-	justify-content: flex-start;	/* element positine debut axe principal valeur par defaut */
-	align-items: stretch; /* etirement de l element valeur defaut */
-}
-
-.contenerpuce { 
-	display: flex;
-	flex:5%;
-	flex-direction: column;
-	
-/* justify-content: center; */	/* axe principal  */
-/* flex-shrink: 0; */
-
-	border: 0px solid rgba(103,58,183 ,1);
-}
-
-.puceDot, .puceCircle {
-	display: flex;
-	align-self: flex-start;
-/*	align-self: center; */
-/* align-items: center; /* axe secondaire */		
-	border: 0px solid rgba(103,58,183 ,1);
-}
-
-.puceDot {
-	padding-top: 1.2em;
-}
-
-.puceCircle {
-	padding-top: 1.8em;
-}
-
-.date {
-	display: flex;
-	flex: 40%;
-	flex-direction: column;
-	flex-shrink: 0;
-
-	border: 0px solid rgba(103,58,183 ,1);
-}
-
-.description {
-	display: flex;
-	flex: 55%;
-	flex-direction: column;
-	border: 0px solid rgba(103,58,183 ,1);
-}
-
-.recommandation {
-	display: flex;
-	flex-direction: column;
-	flex: 50%;
-	
-	border: 0px solid rgba(103,58,183 ,1);
-}
-
-/*  FIN SECTION CONTENEUR MAIN  */
-
-/*  SECTION TEXTE MAIN  */
-/* TITRE CV */
-h1, h2, h3 {
-	font-family: "Font Awesome 5 Free";
-	font-size: 0.9em;
-	font-style: normal;
-	font-weight: normal;
-	color: rgba(0,0,0,1);
-	text-align: left;
-
-}
-/* ENTETE CV */
-h1 {
-	font-size: 2.5em;
-	font-weight: lighter;
-	letter-spacing: -0.1em;
-
-}
-/* TITRE SECTION */
-h2 {
-	font-size: 1em;
-	font-weight: bold;
-}	
-	
-h2.titreMain {
-	padding-left: 1em;
-}
-
-#prenom {
-	color: rgba(209,196,233 ,1);
-	font-weight: normal;
-}
-/* SOUS TITRE CV */
-h3 {
-	font-size: 1em;
-	font-weight: bold;
-	margin-top: -2em;
-}
-h3 > span {
-	
-	text-decoration: underline solid rgba(209,196,233 ,1);
-	text-underline-position: under; /* Pas de support sous firefox ni safari ! */
-}
-
-h4 {
-	font-family: "Font Awesome 5 Free";
-	font-style: normal;
-	font-weight: normal;
-	font-size: 1em;
-	color: rgba(0,0,0,1);
-	text-align: left;
-}
-
-/* SECTION TEXTE MAIN */
 main p {
 	font-family: "Font Awesome 5 Free";
 	font-style: normal;
@@ -310,119 +88,34 @@ main p {
 	text-align: left;
 }
 
-p.texte {
-	font-size: 0.7em;
-	text-align: left;
+/* ######### SECTION ICONES FONT AWESOME ######### */
+.fa-circle, .fa-dot-circle,  .fa-briefcase, .fa-pencil-alt, .fa-graduation-cap, .fa-igloo, .fa-music, .fa-raspberry-pi {
+	color: rgba(103,58,183 ,1); 	
 }
 
-p.intitule {
-	font-size: 0.7em;
-	font-weight: bold;
-}
-
-p.lieuFonction {
-	font-size: 0.6em;
-	text-align: left;
-	margin-top: -0.8em;
-}
-
-p.fonction {
-	font-size: 0.6em;
-	text-align: left;
-	margin-top: -0.5em;
-	margin-bottom: 1.5em;
-}
-
-p.textDescription {
-	margin-top: -0.6em;
-}
-
-p.recommFat {
-	font-size: 0.6em;
-	font-weight: bold;
-	line-height: 0;
-}
-
-p.recommLight {
-	font-size: 0.6em;
+/* ######### TITRE ET TEXTE GENERIQUES ######### */
+h1, h2, h3, h4 {
+	font-family: "Font Awesome 5 Free";
+	font-style: normal;
 	font-weight: normal;
-	line-height: 0;
-}
-/* FIN SECTION TEXTE MAIN */
-
-/* SECTION ICONES FONT AWESOME */
-.fa-circle, .fa-dot-circle,  .fa-briefcase, .fa-pencil-alt, .fa-graduation-cap {
-	color: rgba(103,58,183 ,1); 
+	color: rgba(0,0,0,1);
+	text-align: left;
 }
 
-.fa-dot-circle {
-	font-size: 0.6em; 
-	padding-right: 0.7em;
+/* ######### TITRE CV ######### */
+#prenom {
+		color: rgba(209,196,233 ,1);
+		font-weight: normal;
 }
 
-.fa-circle {
-	font-size: 0.4em;
-	padding-right: 0.7em;
+h3 > span {
+	
+		text-decoration: underline solid rgba(209,196,233 ,1);
+		text-underline-position: under; /* Pas de support sous firefox ni safari ! */
 }
 
-.fa-igloo, .fa-music, .fa-raspberry-pi{
-	color: rgba(103,58,183 ,1); 
-	font-size: 1.5em;
-}
-
-/* BORDURES ICONES LOISIRS */
-.fa-border-igloo, .fa-border-croche, .fa-border-rasp {
-    border-width: 1px;
-    border-style: solid;
-    border-color: rgba(103,58,183 ,1);
-  	-moz-border-radius :  50%;
-  	-webkit-border-radius :  50%;
-  	border-radius :  50%;
-}
-
-.fa-border-igloo {
-	padding: 2% 2% 3% 2%; 
-}
-
-.fa-border-croche {
-  	padding: 2% 3% 3% 2%; 
-}
-
-.fa-border-rasp {
-  	padding: 2% 3% 2% 3%; 
-}
-/* FIN SECTION ICONES FONT AWESOME */
-
-/* UTILIER BEFORE ET AFTER SUPPERPOSITION AVEC PUCE */
-
-/* CARACTERES UNICODES
-
-RAPSBERRY : "\f7bb" prefix: fab 
-IGLOO : "\f7ae"    prefix: fas
-MUSIC : "\f001"    prefix: fas
-CIRLCE: "\f111"    prefix: far 
-
-Syntax:
-
-.maClasse:: before {
-content: "\f7bb";
-}
-
-*/
-
-
-/* The following code will apply if the max-device-width is 480px (eg. iPhone display). Note: max-device-width means the actual resolution of the device 
-and max-width means the viewing area resolution. */
-/* REGLES BOOTSTRAP */
-/*
-phones: < 768px contener width: auto
-tablets: > 768px					750px
-desktop: > 992px					970px
-desktop: > 1200px					1170px
-*/
-
-/* REGLES POUR MOBILE ORIENTATION PORTRAIT */
-@media screen and (max-device-width: 767px) and (orientation: portrait) {
+/* ######### REGLES POUR MOBILE ORIENTATION PORTRAIT ######### */
+@media screen and (max-width: 767px) and (orientation: portrait) {
 
 	#global {
 		display: flex;
@@ -430,36 +123,31 @@ desktop: > 1200px					1170px
 		max-width:767px; 
 		flex-direction: column;
 		flex-wrap: wrap;
-
 	}	
-	/* MAIN */
-	#contener {
-		display: flex;
-		max-width:320px;
-		flex-direction: column;
-		order: 2;
-		margin-left: 1.8em;
-		margin-right: 1.5em;
-		background-color:rgba(255,255,255,1); 
-	}
 	
+	/* ######### BLOCK ASIDE ######### */ /* peut on mettre: section[id|=col01], section[id|=col02] ???? */
+	section[id|=col01]	{
+		width: 100%;
+	}
+
+	section[id|=col02]	{
+		width: 100%;
+		margin-top: 2em;
+	}	
+	
+	aside {
+		display: flex;
+		flex-direction: column;
+	}
+
 	#contenerAvatar {
 		display: flex;
 		height: 190px; 
    	justify-content: center; 	 /*  pas ok*/
    	align-items: center;  		/* pas ok */
-  		margin: 0 auto;  				/* fonctionne */
+  		margin: 0 auto;  			/* fonctionne */
 	}
 
-	#avatar {
-		width: 130px;
-		height: 130px;
-		-moz-border-radius : 50%;
-		-webkit-border-radius : 50%;
-		border-radius : 50%;
-	}	
-	
-	/* ASIDE parent */
 	#col01 {
 		display: flex;
 		flex: 100%;
@@ -471,24 +159,459 @@ desktop: > 1200px					1170px
 		display: flex;
 		order: -1;
 	}
-	/*  TITRE CV  */
-	.col 02-cel01 {
+	
+	/* ######### TITRE CV  ######### */
+	.col02-cel01 {
 		display: flex;
 		max-width:767px;
 	}
+	/* ######### ENTREE TITRE ASIDE ######### */	
+	aside h2 { 
+		font-size: 1em;
+		font-weight: bold;
+		padding-top: 0.3em;
+		padding-bottom: 0.3em;	
+		color: rgba(209,196,233 ,1);
+		background-color: rgba(103,58,183 ,1);
+		text-align: center;
+	}
+	
+	aside p {
+		font-size: 0.8em;
+		padding-left: 1.9em;
+		padding-right: 1.9em;
+	}
+
+	#contact {
+		font-style: normal;
+		font-size: 1em; 
+		font-weight: bold;
+	}
+
+	/* ######### LISTE SANS PUCE ASIDE ######### */
+	aside li {
+		font-size: 0.9em;
+		margin-left: -1.3em;
+		font-weight: normal;
+	}
+
+	aside li:nth-child(2n) {
+		padding-bottom: 1em;
+	}
+
+	aside li:last-child {
+		padding-bottom: 0;
+	}
+
+	/* ######### BLOCK ICONES LOISIR ######### */
+	#icoLoisir {
+		display: flex; 
+		flex-direction: row;
+		flex-wrap: wrap;
+		margin-top: 10px;
+		margin-bottom: 10px;
+
+	}
+	.fa-igloo, .fa-music, .fa-raspberry-pi{
+		font-size: 1.5em;
+	}
+
+	/* ######### FIN SECTION ICONES LOISIRS ######### */
 
 
+	/* ######### SECTION MAIN ######### */
+	main {
+		width: 90%;
+	}
+	.enteteSection {
+		display: flex; 
+		flex-direction: row;
+		flex-wrap: nowrap; 
+		align-content: flex-start;
+		align-items: center; 
+		justify-content: flex-start;
+		border-bottom: 1px solid rgba(103,58,183 ,1);
+
+		margin-left: 1em;
+		/* margin-right: 0.1em; */
+		
+	}
+	/* ######### TITRE CV ######### */
+	h1 {
+		font-size: 1.5em;
+		font-weight: normal;
+		letter-spacing: 0em;
+		padding-left: 0.8em;
+	}
+
+	h2 {
+		font-size: 1em;
+		font-weight: bold;
+	}	
+	
+	h2.titreMain {
+		font-size: 0.8em;
+		padding-left: 1em;
+	}
+	/* SOUS TITRE CV */
+	h3 {
+		font-size: 0.9em;
+		font-weight: bold;
+		margin-top: -1em;
+		padding-left: 1.3em;
+	}
+	h3 > span {
+		text-decoration: underline solid rgba(103,58,183 ,1);
+		text-underline-position: under; /* Pas de support sous firefox ni safari ! */
+	}
+	
+	h4 {
+		font-size: 1em;
+	}
+	
+	#prenom {
+		color: rgba(103,58,183 ,1);
+		font-weight: normal;
+	}
+	/* ######### FIN TITRE CV ######### */
+	
+	#avatar {
+		width: 130px;
+		height: 130px;
+		-moz-border-radius : 50%;
+		-webkit-border-radius : 50%;
+		border-radius : 50%;
+	}	
+
+	.fa-dot-circle {
+		font-size: 0.4em; 
+		padding-right: 0.7em;
+	}
+
+	.fa-circle {
+		font-size: 0.3em;
+		padding-right: 0.7em;
+	}
+
+
+}
+
+/* ########### REGLES POUR DESKTOP ########### */
+/* mettre au début si pas de règle media queries, question heritage css */
+
+@media screen and (min-width: 1200px) and (orientation: landscape) {
+
+
+	#global {
+		display: flex;
+		flex-direction: row;
+		margin: 0 auto;
+		width: 670px; /* screen */
+		border: black 1px solid;
+		/* flex-wrap: wrap; met ASIDE à 100 %... */
+	}
+
+	/* ######### BLOCK ASIDE ######### */
+	aside {
+		display: flex;
+		flex-direction: column;
+		flex: 30%;
+	}
+
+	aside h2, aside p, aside li {
+		display: flex;
+		flex-direction: column;
+		flex: 100%;
+		background-color: rgba(209,196,233 ,1); 
+		font-family: "Font Awesome 5 Free";
+		font-style: normal;
+		font-weight: normal;
+	}
+	
+	#contenerAvatar {
+		display: flex;
+		height: 190px; 
+   	justify-content: center; 
+   	align-items: center; 
+	}
+
+	/* Agrandissement cell proppos */
+	 #col01-cell03 {
+		display: flex;
+		flex-direction: column;
+		flex-grow: 2;
+	}
+	#loisir {
+		display: flex; 
+		flex-direction: column;
+		flex-shrink: 0;
+	}
+
+	#icoLoisir {
+		display: flex; /* les DIV > IMG n'héritent pas du parent ASIDE !!! */
+		flex-direction: row;
+		flex-wrap: wrap;
+		align-content: space-between;
+		justify-content: space-evenly;
+		margin-top: 25px;
+		margin-bottom: 10px;
+	}
+
+	/* ######### ENTREE TITRE TEXTE ASIDE ######### */	
+	aside h2 { 
+		font-size: 0.9em;
+		font-weight: bold;
+		padding-top: 0.3em;
+		padding-bottom: 0.3em;	
+		color: rgba(209,196,233 ,1);
+		background-color: rgba(103,58,183 ,1);
+		text-align: center;
+	}
+	
+	aside p {
+		font-size: 0.7em;
+		padding-left: 1.9em;
+		padding-right: 1.9em;
+	}
+
+	#contact {
+		font-style: normal;
+		font-size: 1em; 
+		font-weight: bold;
+	}
+	
+	/* ######### LISTE SANS PUCE ASIDE ######### */
+	aside li {
+		font-size: 0.7em;
+		margin-left: -1.3em;
+	}
+
+	aside li:nth-child(2n) {
+		padding-bottom: 0.6em;
+	}
+
+	aside li:last-child {
+		padding-bottom: 0;
+	}
+
+	/* ######### BLOCK ICONES LOISIR ######### */
+	#icoLoisir {
+		display: flex; 
+		flex-direction: row;
+		flex-wrap: wrap;
+		margin-top: 10px;
+		margin-bottom: 10px;
+	}
+	
+	.fa-igloo, .fa-music, .fa-raspberry-pi{
+		font-size: 1.5em;
+	}
+	/* ######### FIN SECTION ICONES LOISIRS ######### */
+
+	#avatar {
+		width: 130px;
+		height: 130px;
+		-moz-border-radius : 50%;
+		-webkit-border-radius : 50%;
+		border-radius : 50%;
+	}
+
+/* ICONE COLONNE GAUCHE CELLULE 04 */
+	.iconeCell04 {
+		width: 50px;
+		height: 50px;
+	}
+
+	/*  SECTION CONTENEUR MAIN  */
+
+	main > section {
+		margin-top: 1.5em;
+		margin-bottom: 1.5em;
+	}
+
+	#contener {
+		display: flex;
+		flex: 70%;
+		flex-direction: column;
+		margin-left: 1.8em;
+		margin-right: 1.5em;
+		background-color:rgba(255,255,255,1); 
+	}
+
+
+	.enteteSection {
+		display: flex; /* sinon retour à la ligne après IMG !! */
+		flex-direction: row;
+		flex-wrap: nowrap; /* valeur defaut */
+		align-content: flex-start;
+		align-items: center; /* A REVOIR !! */
+		justify-content: flex-start;
+		border-bottom: 1px solid rgba(103,58,183 ,1);
+		width: 100%;
+	}
+
+	.contenerSection {
+		display: flex; 
+		flex-direction: column; /* OK div en dessous des uns des autres ! */
+		flex: 100%;
+	}
+
+	.contenerSousSection {
+		display: flex;
+		flex-direction: row; 
+		justify-content: flex-start;	/* element positine debut axe principal valeur par defaut */
+		align-items: stretch; /* etirement de l element valeur defaut */
+	}
+
+	.contenerpuce { 
+		display: flex;
+		flex:5%;
+		flex-direction: column;
+	
+	/* justify-content: center; */	/* axe principal  */
+	/* flex-shrink: 0; */
+
+		border: 0px solid rgba(103,58,183 ,1);
+	}
+
+	.puceDot, .puceCircle {
+		display: flex;
+		align-self: flex-start;
+	/*	align-self: center; */
+	/* align-items: center; /* axe secondaire */		
+		border: 0px solid rgba(103,58,183 ,1);
+	}
+
+	.puceDot {
+		padding-top: 1.2em;
+	}
+
+	.puceCircle {
+		padding-top: 1.8em;
+	}
+
+	.date {
+		display: flex;
+		flex: 40%;
+		flex-direction: column;
+		flex-shrink: 0;
+
+		border: 0px solid rgba(103,58,183 ,1);
+	}
+
+	.description {
+		display: flex;
+		flex: 55%;
+		flex-direction: column;
+		border: 0px solid rgba(103,58,183 ,1);
+	}
+
+	.recommandation {
+		display: flex;
+		flex-direction: column;
+		flex: 50%;
+	
+		border: 0px solid rgba(103,58,183 ,1);
+	}
+
+	/*  FIN SECTION CONTENEUR MAIN  */
+
+	/*  SECTION TEXTE MAIN  */
+	/* TITRE CV */
+	h1, h2, h3 {
+		font-size: 0.9em;
+	}
+	
+	/* ENTETE CV */
+	h1 {
+		font-size: 2.5em;
+		font-weight: lighter;
+		letter-spacing: -0.1em;
+
+	}
+	/* TITRE SECTION */
+	h2 {
+		font-size: 1em;
+		font-weight: bold;
+	}	
+	
+	h2.titreMain {
+		padding-left: 1em;
+	}
+
+
+	/* SOUS TITRE CV */
+	h3 {
+		font-size: 1em;
+		font-weight: bold;
+		margin-top: -2em;
+	}
+
+
+	h4 {
+		font-size: 1em;
+	}
+
+	p.texte {
+		font-size: 0.7em;
+		text-align: left;
+	}
+
+	p.intitule {
+		font-size: 0.7em;
+		font-weight: bold;
+	}
+
+	p.lieuFonction {
+		font-size: 0.6em;
+		text-align: left;
+		margin-top: -0.8em;
+	}
+
+	p.fonction {
+		font-size: 0.6em;
+		text-align: left;
+		margin-top: -0.5em;
+		margin-bottom: 1.5em;
+	}
+
+	p.textDescription {
+		margin-top: -0.6em;	
+	}
+
+	p.recommFat {
+		font-size: 0.6em;
+		font-weight: bold;
+		line-height: 0;
+	}
+
+	p.recommLight {
+		font-size: 0.6em;
+		font-weight: normal;
+		line-height: 0;	
+	}
+	/* FIN SECTION TEXTE MAIN */
+
+
+
+	.fa-dot-circle {
+		font-size: 0.6em; 
+		padding-right: 0.7em;
+	}
+
+	.fa-circle {
+		font-size: 0.4em;
+		padding-right: 0.7em;
+	}
+
+	.fa-igloo, .fa-music, .fa-raspberry-pi{
+		font-size: 1.5em;
+	}
 
 }
 
 
 
-
-
-/* REGLES POUR TABLETTE  surface reele  paysage ? ou protrait ? */
-@media screen and (min-device-width: 641px) and (max-width: 1024px) {
-
-}
 
 
 
